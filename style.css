@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, sans-serif;
+    color: black;
+    background-color: rgb(228, 233, 210);
+    font-style: oblique;
+}
+
+header{
+    background-color: #9a96e4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section{
+    padding: 20px;
+}
+
+nav a{
+    padding: 20px;
+}
+
+footer{
+    background-color: #797272;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
