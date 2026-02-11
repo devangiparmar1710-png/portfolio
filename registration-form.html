@@ -51,40 +51,51 @@ input[type="reset"]:hover{
     border: none;
     cursor: pointer;
 }
-
     </style>
-</head>    
+ 
     <script>
-        function validation(){
-            let name=document.forms["redform"]["username"].value;
-            let email=document.forms["redform"]["email"].value;
-            let password=document.forms["redform"]["password"].value;
-            let gender=document.forms["redform"]["gender"].value;
-            let dob=document.forms["redform"]["dob"].value;
-            if(name==""){
-                alert("Please enter the name");
-                return false;
-            }
-            if(email=="" || email.indexOf("@")==-1){
-                alert("Please enter the email");
-                return false;
-            }
-            if(password.length<6){
-                alert("Please enter the vaild password");
-                return false;
-            }
-            if(gender==""){
-                alert("Please enter the gender");
-                return false;
-            }
-            if(dob==""){
-                alert("Please the vaild date");
-                return false;
-            }
-            alert("Registration successfull...!");
-        }
-    </script>
-</head>
+function validation() {
+
+    let name = document.forms["redform"]["username"].value;
+    let email = document.forms["redform"]["email"].value;
+    let password = document.forms["redform"]["password"].value;
+    let gender = document.querySelector('input[name="gender"]:checked');
+    let day = document.getElementById("Birthday_Day").value;
+    let month = document.getElementById("Birthday_Month").value;
+    let year = document.getElementById("Birthday_Year").value;
+
+    if(name.trim() === ""){
+        alert("Please enter your name");
+        return false;
+    }
+
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if(email === "" || !email.match(emailPattern)){
+        alert("Please enter a valid email");
+        return false;
+    }
+
+    if(password.length < 6){
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    if(!gender){
+        alert("Please select your gender");
+        return false;
+    }
+
+    if(day == "-1" || month == "-1" || year == "-1"){
+        alert("Please select complete date of birth");
+        return false;
+    }
+
+    alert("Registration Successful...!");
+    return true;
+}
+</script>
+
+</head>    
 <body>
     <h2><i>Advorix Technologies Registration</i></h2>
     <form>
@@ -162,27 +173,6 @@ input[type="reset"]:hover{
             </select>
             <select name="BirthdayYear" id="Birthday_Year">
                <option value="-1">Year:</option>
-               <option value="2019">2026</option>
-               <option value="2019">2025</option>
-               <option value="2019">2024</option>
-               <option value="2019">2023</option>
-               <option value="2019">2022</option>
-               <option value="2019">2021</option>
-               <option value="2019">2020</option>
-               <option value="2019">2019</option>
-               <option value="2018">2018</option>
-               <option value="2017">2017</option>
-               <option value="2016">2016</option>
-               <option value="2015">2015</option>
-               <option value="2014">2014</option>
-               <option value="2013">2013</option>
-               <option value="2012">2012</option>
-               <option value="2011">2011</option>
-               <option value="2010">2010</option>
-               <option value="2009">2009</option>
-               <option value="2008">2008</option>
-               <option value="2007">2007</option>
-               <option value="2006">2006</option>
                <option value="2005">2005</option>
                <option value="2004">2004</option>
                <option value="2003">2003</option>
